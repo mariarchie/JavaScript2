@@ -5,18 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 class="title">Lorem, ipsum dolor.</h1>
+    <h2 id="heading">Lorem ipsum dolor sit amet.</h2>
+    <ul class="ul">
+        <li class="list">text1</li>
+        <li class="list">text2</li>
+        <li class="list">text3</li>
+    </ul>
+    <p class="text">Lorem, ipsum dolor. 1</p>
+    <p class="text">Lorem, ipsum dolor. 2</p>
+    <p class="text">Lorem, ipsum dolor. 3</p>
+    <button class="btn">Купить</button>
+    <div class="content"></div>
     <script>
-        let temperatureC = prompt('Какая температура в градусах Цельсия?');
-        let temperatureF = (9 / 5) * temperatureC + 32;
-        console.log(`Температура по Цельсию ${temperatureC} грудуса`);
-        console.log(`Температура по фаренгейту ${temperatureF} грудуса`);
+        const btnEl = document.querySelector('.btn');
+        const contentEl = document.querySelector('.content');
+        const textEl = document.createElement('p');
+        textEl.textContent = 'A lot of text';
 
-        let name = prompt('Какая Вас зовут?');
-        let admin = name;
-        console.log(`Админ: ${admin}`);
+        btnEl.onclick = function () {
+            btnEl.textContent = 'Товар в корзине';
+            contentEl.appendChild(textEl);
+        }
+
+
+
+        // const heading2 = document.getElementById('heading');
+        const listEls = document.getElementsByClassName('list');
+        const listElsQS = document.querySelectorAll('.list');
+        const heading2 = document.querySelector('#heading')
+        const heading = document.querySelector('.title');
+        const text = document.querySelectorAll('.text');
+        for (let i = 0; i < text.length; i++) {
+            console.log(text[i]);
+        }
+        text.forEach(element => {
+            console.log(element);
+        });
+        console.log(heading2);
+        console.log(listEls);
+        console.log(listElsQS);
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
