@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button class="button">Купить</button> -->
+    <!-- <div onclick="console.log('Helo click html')" class="div-button">Купить 2</div> -->
+    <button class="button">Купить 1</button>
+    <button class="button">Купить 2</button>
+    <button class="button">Купить 3</button>
+
+    <ul class="menu">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+    <script>
+
+        // const buttonEl = document.querySelector('.button');
+
+        // let count = 0;
+        // buttonEl.onclick = function () {
+        //     console.log('Click js button');
+        //     count++;
+        //     console.log(`Кликов по кнопке ${count}`);
+        // }
+
+        // buttonEl.addEventListener('click', function (e) {
+        //     console.log('click added');
+        // });
+        // buttonEl.addEventListener('click', function (e) {
+        //     console.log('click added two');
+        // });
+
+        const buttonEls = document.querySelectorAll('.button');
+        buttonEls.forEach(element => {
+            element.addEventListener('click', function (event) {
+                const target = event.target;
+                console.log(target);
+            });
+        });
+
+        const menuEl = document.querySelector('.menu');
+
+        const nameFunction = (e) => {
+            console.log(e.target, e.currentTarget);
+        }
+
+        menuEl.addEventListener('click', nameFunction);
+
+    </script>
+</body>
+
+</html>
