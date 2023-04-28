@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-box {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 270px;
+            border: 1px solid green;
+            padding: 10px;
+        }
+
+        .product__link {
+            text-decoration: none;
+            color: grey;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="product-box"></div>
+    <div class="content"></div>
+    <script src="data.js"></script>
+    <script>
+
+        const parksData = JSON.parse(data);
+        console.log(parksData);
+
+        const contentEl = document.querySelector('.content');
+
+        const productBox = document.querySelector('.product-box');
+
+        Object.keys(parksData).forEach(key => {
+            const parkData = parksData[key];
+
+            const productEl = document.createElement('div');
+            productEl.classList.add('product');
+
+            const productImg = document.createElement('img');
+            productImg.classList.add('product__img');
+            productImg.setAttribute('alt', `${parkData.name} image`);
+            productImg.src = parkData.image;
+
+            const productContent = document.createElement('div');
+            productContent.classList.add('product__content');
+
+            const productName = document.createElement('h1');
+            productName.classList.add('product__name');
+            productName.textContent = parkData.name;
+
+            const productLink = document.createElement('a');
+            productLink.classList.add('product__link');
+            productLink.href = parkData.link;
+            productLink.textContent = `${parkData.name} link`;
+
+            const productText = document.createElement('p');
+            productContent.classList.add('product__text');
+            productText.textContent = parkData.description;
+
+            const productState = document.createElement('p');
+            productContent.classList.add('product__state');
+            productState.textContent = `State ${parkData.state}`;
+
+            productBox.appendChild(productEl);
+            productEl.appendChild(productName);
+            productEl.appendChild(productImg);
+            productEl.appendChild(productContent);
+            productContent.appendChild(productLink);
+            productContent.appendChild(productText);
+            productContent.appendChild(productState);
+        });
+    </script>
+</body>
+
+</html>

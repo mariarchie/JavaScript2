@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product {
+            width: 250px;
+            border: 1px solid #000;
+            padding: 16px;
+        }
+
+        .product-box {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-box"></div>
+    <script>
+        const productsData = [
+            {
+                src: 'img.png',
+                alt: 'imj obj data',
+                name: 'Название из obj data',
+                link: 'product.html',
+                desc: 'описание товара из obj data',
+                price: 21000
+            },
+            {
+                src: 'img2.png',
+                alt: 'imj obj data newphoto',
+                name: 'Название нового из obj data',
+                link: 'product2.html',
+                desc: 'описание нового товара из obj data',
+                price: 16000
+            }
+        ]
+        const productBox = document.querySelector('.product-box');
+
+        productsData.forEach(productData => {
+            const productEl = document.createElement('div');
+            productEl.classList.add('product');
+
+            const productImg = document.createElement('img');
+            productImg.classList.add('product__img');
+            productImg.setAttribute('alt', productData.alt);
+            productImg.src = productData.src;
+
+            const productContent = document.createElement('div');
+            productContent.classList.add('product__content');
+
+            const productLink = document.createElement('a');
+            productLink.href = productData.link;
+            productLink.textContent = productData.name;
+
+            const productText = document.createElement('p');
+            productContent.classList.add('product__text');
+            productText.textContent = productData.desc;
+
+            const productPrice = document.createElement('p');
+            productContent.classList.add('product__price');
+            productPrice.textContent = productData.price;
+
+            productBox.appendChild(productEl);
+            productEl.appendChild(productImg);
+            productEl.appendChild(productContent);
+            productContent.appendChild(productLink);
+            productContent.appendChild(productText);
+            productContent.appendChild(productPrice);
+        });
+
+
+
+    </script>
+</body>
+
+</html>

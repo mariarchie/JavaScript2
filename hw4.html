@@ -72,14 +72,8 @@
 
             let formValid = true;
 
-            inputEls.forEach((input) => {
-                if (!input.value) {
-                    input.classList.add('error');
-                    formValid = false;
-                } else {
-                    input.classList.remove('error');
-                }
-            });
+            input.classList.toggle('error', !input.value);
+            formValid = input.value ? true : false;
 
             if (formValid) {
                 formEl.submit();
@@ -88,11 +82,7 @@
 
         inputEls.forEach((input) => {
             input.addEventListener('input', () => {
-                if (!input.value) {
-                    input.classList.add('error'); 
-                } else {
-                    input.classList.remove('error');
-                }
+                input.classList.toggle('error', !input.value);
             });
         });
 
