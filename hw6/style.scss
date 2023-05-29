@@ -611,6 +611,8 @@ a {
             padding-bottom: 20px;
         }
 
+
+
         &-box__content {
             margin-top: 129.5px;
             margin-bottom: 128px;
@@ -805,7 +807,7 @@ a {
             align-items: center;
             justify-content: center;
             gap: 11px;
-            color: #FFFFFF;
+            cursor: pointer;
 
             &:hover {
                 box-shadow: 0 0 5px #fff;
@@ -814,6 +816,7 @@ a {
                     fill: #F16D7F;
                 }
             }
+
         }
     }
 
@@ -1088,6 +1091,7 @@ a {
 
     &-box__content {
         margin-bottom: 48.5px;
+        margin-bottom: 48.5px;
         gap: 40px;
         display: flex;
         flex-direction: column-reverse;
@@ -1109,7 +1113,7 @@ a {
 
     &__cross {
         position: absolute;
-        top: 20px;
+        top: 25px;
         right: 20px;
     }
 }
@@ -1503,7 +1507,7 @@ a {
         &__label {
             cursor: pointer;
         }
-        
+
     }
 
     &__details {
@@ -1750,6 +1754,11 @@ a {
         }
     }
 }
+
+.cart-container {
+    margin-top: 50px;;
+}
+
 
 @media (max-width: 1024px) and (min-width: 768px) {
 
@@ -2312,17 +2321,18 @@ a {
     .loyalty {
         margin-top: 0px;
         width: 359px;
+
         &__heading {
             font-size: 16px;
             line-height: 19px;
         }
-    
+
         &__text {
             font-size: 16px;
             line-height: 19px;
             width: 100%;
         }
-    
+
         &__list {
             font-size: 16px;
             line-height: 19px;

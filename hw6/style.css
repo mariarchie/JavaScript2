@@ -676,7 +676,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 11px;
-  color: #FFFFFF;
+  cursor: pointer;
 }
 .mainPage_product__add:hover {
   box-shadow: 0 0 5px #fff;
@@ -923,6 +923,7 @@ a {
 }
 .product-box__content {
   margin-bottom: 48.5px;
+  margin-bottom: 48.5px;
   gap: 40px;
   display: flex;
   flex-direction: column-reverse;
@@ -939,7 +940,7 @@ a {
 }
 .product__cross {
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 20px;
 }
 
@@ -1486,6 +1487,10 @@ a {
 }
 .footer__icons__link:hover path {
   fill: white;
+}
+
+.cart-container {
+  margin-top: 50px;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
